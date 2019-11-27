@@ -27,8 +27,8 @@ class BackendMasterComposer
         }
 
 
-        $view->with('maintainer', 'Team Sattit');
-        $view->with('maintainer_url', 'https://sattit.com');
+        $view->with('maintainer', 'Daocreate'); //Team Sattit
+        $view->with('maintainer_url', 'https://facebook.com/daocreate'); //https://sattit.com
         $view->with('appSettings', $appSettings);
         $view->with('languages', AppHelper::LANGUEAGES);
         $view->with('idc', 'd71a320328c4ed43e45fd4ec9553d37c1e705417');

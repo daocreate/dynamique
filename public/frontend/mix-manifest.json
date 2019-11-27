@@ -1,5 +1,7 @@
 {
-    "/js/libs.js": "/js/libs.js",
-    "/css/libs.css": "/css/libs.css",
-    "/js/jquery.min.js": "/js/jquery.min.js"
+    "/js/libs.js": "/js/libs.js?id=708742995e3841a21908",
+    "/css/libs.css": "/css/libs.css?id=06d525102659128f6327",
+    "/js/libs.js.map": "/js/libs.js.map?id=bf601daadd5bbab20623",
+    "/css/libs.css.map": "/css/libs.css.map?id=7938763e41b605e323c1",
+    "/js/jquery.min.js": "/js/jquery.min.js?id=13c0a5055cca7b2463b2"
 }

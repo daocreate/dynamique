@@ -265,7 +265,7 @@ class SiteController extends Controller
             if($request->hasFile('photo')){
                 $storagepath = $request->file('photo')->store('public/testimonials');
                 $fileName = basename($storagepath);
-                $data['avatar'] = $fileName;
+                $data['photo'] = $fileName;
 
             }
 

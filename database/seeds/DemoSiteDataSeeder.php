@@ -21,7 +21,7 @@ class DemoSiteDataSeeder extends Seeder
     public function run()
     {
         //truncate previous data
-        echo 'deleting old data.....';
+        echo PHP_EOL, 'deleting old data.....';
         $this->deletePreviousData();
 
         //seed common settings
@@ -78,7 +78,7 @@ class DemoSiteDataSeeder extends Seeder
         $this->eventData();
 
 
-        echo PHP_EOL , 'seeding completed.';
+        echo PHP_EOL , 'seeding completed.', PHP_EOL;
 
     }
 
@@ -137,9 +137,9 @@ class DemoSiteDataSeeder extends Seeder
         copy($originFilePath.$fileName, $destinationPath.$fileName);
         $data['favicon'] = $fileName;
 
-        $data['name'] = 'Satt School';
-        $data['short_name'] = 'SattSchool';
-        $data['facebook'] = '#';
+        $data['name'] = 'Dynamique School';
+        $data['short_name'] = 'Dynamique';
+        $data['facebook'] = 'https://web.facebook.com/Groupe-scolaire-bilingue-les-dynamiques-338535563532277/';
         $data['google'] = '#';
         $data['twitter'] = '#';
         $data['youtube'] = '#';
@@ -197,19 +197,19 @@ class DemoSiteDataSeeder extends Seeder
         //now crate or update model
         SiteMeta::updateOrCreate(
             ['meta_key' => 'contact_address'],
-            [ 'meta_value' => 'Rajshahi-6000']
+            [ 'meta_value' => 'Dynamic School']
         );
         SiteMeta::updateOrCreate(
             ['meta_key' => 'contact_phone'],
-            [ 'meta_value' => '+8800155258742']
+            [ 'meta_value' => ' +237 677 002 528 / 658 787 902 /660 296 606']
         );
         SiteMeta::updateOrCreate(
             ['meta_key' => 'contact_email'],
-            [ 'meta_value' => 'contact@sattschoolbd.com']
+            [ 'meta_value' => 'groupedynamique@gmail.com']
         );
         SiteMeta::updateOrCreate(
             ['meta_key' => 'contact_latlong'],
-            [ 'meta_value' => '23.7340076,90.3841824']
+            [ 'meta_value' => '7.31746,13.56279']
         );
     }
     private function galleryData()
@@ -253,8 +253,8 @@ class DemoSiteDataSeeder extends Seeder
     private function testimonialData()
     {
         $data = [
-            'writer' => 'Tariqul',
-            'comments' => 'Satt Academy',
+            'writer' => 'daocreate',
+            'comments' => 'Awesome Academy',
             'avatar'    => null,
             'order'     => 1,
         ];
@@ -262,8 +262,8 @@ class DemoSiteDataSeeder extends Seeder
         Testimonial::create($data);
 
         $data = [
-            'writer' => 'Emran',
-            'comments' => 'Satt school',
+            'writer' => 'Tanekou Bernard',
+            'comments' => 'Great school',
             'avatar'    => null,
             'order'     => 2,
         ];
@@ -272,7 +272,7 @@ class DemoSiteDataSeeder extends Seeder
     }
     private function statisticData()
     {
-        $values = '4000,150,18000,9800';
+        $values = '400,15,1800,980';
         //now crate or update model
         SiteMeta::updateOrCreate(
             ['meta_key' => 'statistic'],
@@ -305,7 +305,7 @@ class DemoSiteDataSeeder extends Seeder
         //now crate or update model
         AboutContent::updateOrCreate(
             ['id' => 1],
-           $data
+            $data
         );
 
         $data = [];
@@ -408,7 +408,7 @@ class DemoSiteDataSeeder extends Seeder
             'name' => 'Class Four',
             'image_sm' => '',
             'image_lg' => '',
-            'teacher' => 'Jhon Doe',
+            'teacher' => 'WOYANG MAIRE ROMAINE',
             'room_no' => 'R401-R402',
             'capacity' => 70,
             'shift' => 'Morning',
@@ -431,7 +431,7 @@ class DemoSiteDataSeeder extends Seeder
         }
 
         $data = [
-            'name' => 'Kanak Devnath',
+            'name' => 'Fakir Chand',
             'image' => '',
             'designation' => 'Head Master',
             'qualification' => 'M.A in English',
@@ -473,7 +473,7 @@ class DemoSiteDataSeeder extends Seeder
         }
 
         $data = [
-            'title' => 'Annual function 2018',
+            'title' => 'Annual function 2020',
             'event_time' =>  Carbon::createFromFormat('d/m/Y h:i a', '04/12/2018 01:36 pm'),
             'cover_photo' => '',
             'slider_1' => '',
@@ -508,7 +508,7 @@ class DemoSiteDataSeeder extends Seeder
 
 
         $data['title'] = 'Farewell Party';
-        $data['event_time'] = Carbon::createFromFormat('d/m/Y h:i a', '20/12/2018 03:00 pm');
+        $data['event_time'] = Carbon::createFromFormat('d/m/Y h:i a', '3/07/2019 03:00 pm');
         $data['cover_photo'] = null;
         $data['tags'] = 'farewell,party';
         $data['cover_video'] = '<iframe src="https://www.youtube.com/embed/pXfqbimmBhE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
@@ -516,7 +516,6 @@ class DemoSiteDataSeeder extends Seeder
         $data['slug'] = strtolower(str_replace(' ','-', $data['title']));
 
         Event::create($data);
-
 
 
     }

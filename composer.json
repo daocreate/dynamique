@@ -1,5 +1,5 @@
 {
-    "name": "SattIt School Management",
+    "name": "DAO School Management",
     "version": "1.0",
     "description": "Another School Management System build with laravel",
     "keywords": [
@@ -22,8 +22,8 @@
     "authors": [
         {
             "name": "Team SATTIT",
-            "email": "info@sattit.com",
-            "homepage": "https://sattit.com",
+            "email": "daocreate@gmail.com",
+            "homepage": "https://facebook.com/daocreate",
             "role": "Developer"
         }
     ],

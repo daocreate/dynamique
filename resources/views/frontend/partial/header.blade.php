@@ -38,8 +38,12 @@
 					</div>
 
 					<div class="cws_lang_links">
-						<a href="{{route('setLocale','bn')}}" class="cws_lang_link" title="বাংলা">
+						{{--<a href="{{route('setLocale','bn')}}" class="cws_lang_link" title="বাংলা">
 							<i class="lang-icon flag-icon flag-icon-bd"></i>
+						</a>--}}
+						<a href="{{route('setLocale','fr')}}" class="cws_lang_link" title="Français">
+							<img src="{{asset('images/lang/fr.png')}}" width="30px" height="20x" style="margin-right: 33px;">
+							<i class="lang-icon flag-icon flag-icon-fr"></i>
 						</a>
 						<a href="{{route('setLocale','en')}}" class="cws_lang_link" title="English">
 							<i class="lang-icon flag-icon flag-icon-gb"></i>

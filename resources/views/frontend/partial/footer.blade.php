@@ -83,7 +83,7 @@
 				</div>
 
 				<div class="maintainedby">@lang('site.maintainer')
-					<a href="{{$maintainer_url}}" class="site">{{$maintainer}}</a>
+					<a href="{{$maintainer_url}}" class="site" target="_blank">{{$maintainer}}</a>
 				</div>
 			</div>
 		</div>

@@ -46,8 +46,8 @@ class FrontendMasterComposer
         }
 
 
-        $view->with('maintainer', 'Team Sattit');
-        $view->with('maintainer_url', 'https://sattit.com');
+        $view->with('maintainer', 'daocreate');
+        $view->with('maintainer_url', 'https://facebook.com/daocreate');
         $view->with('siteInfo', $siteInfo);
         $view->with('event', $upComingEvent);
         $view->with('GA_TRACKING_ID', $GA_TRACKING_ID);

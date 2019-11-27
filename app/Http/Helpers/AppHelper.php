@@ -35,6 +35,7 @@ class AppHelper {
 	const LANGUEAGES = [
 		'en' => 'English',
 		'bn' => 'Bangla',
+        'fr' => 'Français'
 	];
 	const USER_ADMIN = 1;
 	const USER_TEACHER = 2;

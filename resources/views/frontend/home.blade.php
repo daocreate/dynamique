@@ -287,7 +287,7 @@
 					@foreach($testimonials as $test)
 					<div class="gallery-item">
 						<div class="quote-avatar-author clear-fix">
-							<img src="@if($test->photo ){{ asset('storage/testimonials')}}/{{ $test->photo }} @else {{ asset('images/avatar.jpg')}} @endif" alt="">
+							<img class="avatar" src="@if($test->photo ){{ asset('storage/testimonials')}}/{{ $test->photo }} @else {{ asset('images/avatar.jpg')}} @endif" alt="">
 							<div class="author-info">{{$test->writer}}</div>
 						</div>
 						<p>{{$test->comments}}</p>
