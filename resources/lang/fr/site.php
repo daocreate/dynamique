@@ -61,11 +61,11 @@ return [
     'phone_no' => 'Numéro Téléphone',
     'email' => 'Email',
     'our_office' => 'Notre bureau',
-    'faq_title' => 'Frequently asked questions',
-    'timeline_title' => 'Our Journey',
+    'faq_title' => 'questions Fréquentes',
+    'timeline_title' => 'Notre voyage',
     'not_found' => '404',
-    'not_found_title' => 'This page doesn\'t exist.',
+    'not_found_title' => 'cette page n\'existe  pas.',
     'code_500' => '500',
-    'code_500_title' => 'Internal Server Error! Contact System Administrator.',
+    'code_500_title' => 'Erreur Interne! Contacter l\'administrateur System .',
 
 ];

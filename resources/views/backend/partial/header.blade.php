@@ -14,7 +14,7 @@
     <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->
       <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only">Toggle navigation</span>
+        <span class="sr-only">{{__('global.toggleNavigation')}}</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -42,13 +42,13 @@
                 <i class="fa fa-bell-o"></i>
                 <span class="label label-danger"><lable class="alert-image notification_badge">0</lable></span> </a>
             <ul class="dropdown-menu">
-                <li class="header notificaton_header">You have 0 recent notifications</li>
+                <li class="header notificaton_header">{{__('global.you_have_no_notification')}}</li>
                 <li>
                         <ul class="menu notification_top">
                         </ul>
 
                 </li>
-                <li class="footer"><a href="{{route('user.notification_unread')}}">See All Notifications</a></li>
+                <li class="footer"><a href="{{route('user.notification_unread')}}">{{__('global.see_all_notification')}}</a></li>
             </ul>
         </li>
           @if($show_language)
@@ -58,7 +58,7 @@
                 <span class="label label-warning">2</span>
             </a>
             <ul class="dropdown-menu">
-                <li class="header"> Language</li>
+                <li class="header"> {{__('global.language')}}</li>
                 @foreach($languages as $key => $lang)
                 <li class="language" id="bangla">
                     <a href="#">
@@ -88,13 +88,13 @@
             <div class="col-xs-6 text-center">
                 <a href="{{ URL::route('profile') }}">
                     <div><i class="fa fa-briefcase"></i></div>
-                    Profile
+                    {{__('global.profile')}}
                 </a>
             </div>
             <div class="col-xs-6 text-center password">
                 <a href="{{ URL::route('change_password') }}">
                     <div><i class="fa fa-lock"></i></div>
-                   Password
+                   {{__('global.login_password')}}
                 </a>
             </div>
         </li>
@@ -104,7 +104,7 @@
             <div class="col-xs-6 text-center">
                 <a href="{{ URL::route('logout') }}">
                     <div><i class="fa fa-power-off"></i></div>
-                    Log out
+                    {{__('global.logout')}}
                 </a>
             </div>
             <div class="col-xs-6 text-center password">

@@ -4,10 +4,10 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="description" content="@if(isset($appSettings['institute_settings']['name'])){{$appSettings['institute_settings']['name']}}@else SattSchool @endif">
+    <meta name="description" content="@if(isset($appSettings['institute_settings']['name'])){{$appSettings['institute_settings']['name']}}@else DAO School @endif">
      <meta name="keywords" content="school,college,management,result,exam,attendace,hostel,admission,events">
      <meta name="author" content="Satt it">
-      <title>@if(isset($appSettings['institute_settings']['short_name'])){{$appSettings['institute_settings']['short_name']}} @else SattSchool @endif | login-page</title>
+      <title>@if(isset($appSettings['institute_settings']['short_name'])){{$appSettings['institute_settings']['short_name']}} @else DAO School @endif | login-page</title>
      <meta name="viewport" content="width=device-width, initial-scale=1">
      <meta name="csrf-token" content="{{ csrf_token() }}">
      <link rel="icon" href="@if(isset($appSettings['institute_settings']['favicon'])){{asset('storage/logo/'.$appSettings['institute_settings']['favicon'])}} @else{{ asset('images/favicon.png') }}@endif" type="image/png">
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       <link href="{{asset('css/toastr.min.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('/css/login.css') }}">
-    
+
 </head>
 
 <body>
@@ -41,7 +41,7 @@
                             <div class="bg-area11">
                                 <img class="card-img" src="{{ asset('images/loginmb.png') }}" alt="Card image">
                                 <div class="card-img-overlay ">
-                                    <h1 class="text-center mt-5 pt-3">WELCOME !!!</h1>
+                                    <h1 class="text-center mt-5 pt-3">{{__('global.welcome')}} !!!</h1>
                                     <form class="text-white" action="{{URL::Route('login')}}" method="post">
                                         @csrf
 
@@ -60,7 +60,7 @@
                                             <label for="exampleInputPassword1 d-block m-auto"> Passworld</label>
                                             <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
                                             <span class="text-danger">{{ $errors->first('password') }}</span>
-                                          
+
                                         </div>
                                         <div class="form-group form-check text-white">
                                             <input type="checkbox" class="form-check-input" id="exampleCheck1" >
@@ -92,8 +92,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
      <script src="{{asset('js/toastr.min.js')}}"></script>
      <script>
-            @if(session('error'))
-        
+         @if(session('error'))
+
              toastr.success('{{session('error')}}');
          @endif
      </script>

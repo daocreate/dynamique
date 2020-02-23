@@ -14,8 +14,8 @@
     <!-- Section header -->
     <section class="content-header">
         <h1>
-            User
-            <small>List</small>
+            {{__('global.user')}}
+            <small>{{__('global.list')}}</small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="{{URL::route('user.dashboard')}}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
@@ -68,19 +68,19 @@
                                             {{--</a>--}}
                                         {{--</div>--}}
                                         <div class="btn-group">
-                                            <a title="Edit" href="{{URL::route('user.edit',$user->id)}}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
+                                            <a title="{{__('global.edit')}}" href="{{URL::route('user.edit',$user->id)}}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
                                             </a>
                                         </div>
                                         <!-- todo: have problem in mobile device -->
                                         <div class="btn-group">
-                                            <a title="Edit Permission" href="{{URL::route('user.permission',$user->id)}}" class="btn btn-info btn-sm"><i class="fa fa-user-times"></i></a>
+                                            <a title="{{__('global.edit_permission')}}" href="{{URL::route('user.permission',$user->id)}}" class="btn btn-info btn-sm"><i class="fa fa-user-times"></i></a>
                                             </a>
                                         </div>
                                         <div class="btn-group">
                                             <form  class="myAction" method="POST" action="{{URL::route('user.destroy', $user->id)}}">
                                                 @csrf
                                                 <input name="_method" type="hidden" value="DELETE">
-                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete">
+                                                <button type="submit" class="btn btn-danger btn-sm" title="{{__('global.delete')}}">
                                                     <i class="fa fa-fw fa-trash"></i>
                                                 </button>
                                             </form>

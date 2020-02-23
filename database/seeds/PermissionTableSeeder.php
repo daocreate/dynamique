@@ -770,6 +770,14 @@ class PermissionTableSeeder extends Seeder {
 				"name" => "Slider Edit",
 				"group" => "Website",
 			],
+            ["slug" => "site.index",
+                "name" => "Site Index",
+                "group" => "Website",
+            ],
+            ["slug" => "site.timeline",
+                "name" => "Site Timeline Create",
+                "group" => "Website",
+            ],
 		];
 
 		$hrmPermissionList = [

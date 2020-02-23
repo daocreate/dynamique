@@ -5,7 +5,7 @@
     <ul class="sidebar-menu" data-widget="tree">
       <li>
         <a href="{{ URL::route('user.dashboard') }}">
-          <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+          <i class="fa fa-dashboard"></i> <span>{{__('global.dashboard')}}</span>
         </a>
       </li>
       @can('student.index')
@@ -786,7 +786,7 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              @can('site.index')
+              @can('slider.index') //site.index
               <li><a href="{{URL::route('slider.index')}}"><i class="fa fa-picture-o text-aqua"></i> Sliders</a></li>
               @endcan
               @can('site.about_content')

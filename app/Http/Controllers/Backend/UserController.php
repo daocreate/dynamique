@@ -87,8 +87,11 @@ class UserController extends Controller
             return redirect()->intended('dashboard')->with($msgType, $msg);
 
         }
-        Toastr::warning('Please Add Atlest one Fee:','Warning');
-        return redirect()->route('login')->with('error', 'Your email/password combination was incorrect');
+        $on_fee = trans('controller.please_add_on_fee');
+        Toastr::warning("controller.please_add_on_fee",'Warning');
+
+        $combination_error = trans('controller.your_combination_was_incorrect');
+        return redirect()->route('login')->with('error', "controller.your_combination_was_incorrect");
     }
 
 
@@ -100,7 +103,8 @@ class UserController extends Controller
     public function logout()
     {     
         Auth::logout();
-        return redirect()->route('login')->with('success', 'Your are now logged out!');    
+        $logout = trans('controller.your_are_now_logged_out');
+        return redirect()->route('login')->with('success', "$logout");
     }
 
     /**
@@ -1049,7 +1053,7 @@ class UserController extends Controller
 
         $rolePermissions = [];
 
-        $now = Carbon::now(env('APP_TIMEZONE','Asia/Dhaka'));
+        $now = Carbon::now(env('APP_TIMEZONE','Africa/Douala'));
 
         if(count($permissionList)) {
 
