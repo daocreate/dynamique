@@ -104,7 +104,7 @@ class UserController extends Controller
     {     
         Auth::logout();
         $logout = trans('controller.your_are_now_logged_out');
-        return redirect()->route('login')->with('success', "$logout");
+        return redirect()->route('login')->with('success', "controller.your_are_now_logged_out");
     }
 
     /**

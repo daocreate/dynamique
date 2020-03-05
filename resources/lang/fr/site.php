@@ -10,7 +10,7 @@ return [
     | The following language lines are used during website frontend
     */
 
-    'menu_home' => 'Acceuil',
+    'menu_home' => 'Accueil',
     'menu_class' => 'Classe',
     'menu_teachers' => 'Enseignants',
     'menu_events' => 'Événements',
@@ -18,7 +18,7 @@ return [
     'menu_contact_us' => 'Contactez-nous',
     'menu_faq' => 'FAQ',
     'menu_admission' => 'Admission',
-    'menu_result' => 'Resultats',
+    'menu_result' => 'Résultats',
     'menu_timeline' => 'Chronologie',
     'empty_content' => 'S\'il vous plaît ajouter le contenu du panneau d\'administration',
     'apply_now' => 'Appliquer maintenant',
@@ -27,7 +27,7 @@ return [
     'about_us_more' => 'En savoir plus sur nous à partir de la vidéo',
     'about_us_more2' => 'Regarder plus',
     'service' => 'Nos services',
-    'stat_students' => 'Etudiants inscrits',
+    'stat_students' => 'étudiants inscrits',
     'stat_teachers' => 'Enseignant(es)',
     'stat_college' => 'Aller au College',
     'stat_books' => 'Livres',
@@ -55,7 +55,7 @@ return [
     'yn' => 'Votre Nom',
     'ye' => 'Votre email',
     'subject' => 'Sujet',
-    'ym' => 'Votre Méssage',
+    'ym' => 'Votre Message',
     'send' => 'Envoyer',
     'address' => 'Addresse',
     'phone_no' => 'Numéro Téléphone',

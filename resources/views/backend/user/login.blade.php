@@ -27,9 +27,9 @@
                 <div class="col-lg-10 col-md-12">
                     <div class="row" id="bd_area">
                         <div class="col-lg-4 col-md-12 text-center">
-                            <div class="pic_img1 mt-3">
+                            {{--<div class="pic_img1 mt-3">
                                 <img class="" src="{{ asset('images/sattems.png') }}" alt="">
-                            </div>
+                            </div>--}}
                         </div>
                         <div class="col-lg-3 col-md-12 text-center">
                             <div class="pic_img">
@@ -46,7 +46,7 @@
                                         @csrf
 
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1"> Username or email </label>
+                                            <label for="exampleInputEmail1"> {{__('global.username_or_email')}} </label>
                                             <input type="text" class="form-control" name="username" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="username" required>
                                              <span class="text-danger">{{ $errors->first('username') }}</span>
                                                 <span class="text-danger">
@@ -57,19 +57,19 @@
 
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputPassword1 d-block m-auto"> Passworld</label>
+                                            <label for="exampleInputPassword1 d-block m-auto"> {{__('global.login_password')}}</label>
                                             <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
                                             <span class="text-danger">{{ $errors->first('password') }}</span>
 
                                         </div>
                                         <div class="form-group form-check text-white">
                                             <input type="checkbox" class="form-check-input" id="exampleCheck1" >
-                                            <label class="form-check-label" for="exampleCheck1">Remember me
-                                                &nbsp; <span> <a class="forget-pass float-right" href="{{URL::Route('forgot')}}"> Forget Password</a></span>
+                                            <label class="form-check-label" for="exampleCheck1">{{__('global.remember_me')}}
+                                                &nbsp; <span> <a class="forget-pass float-right" href="{{URL::Route('forgot')}}"> {{__('global.Forgot_password')}}</a></span>
                                             </label>
 
                                         </div>
-                                        <button type="submit" class="tri-button mt-5"><span>SIGN IN</span></button>
+                                        <button type="submit" class="tri-button mt-5"><span>{{__('global.signin')}}</span></button>
                                     </form>
                                 </div>
                             </div>
@@ -93,7 +93,6 @@
      <script src="{{asset('js/toastr.min.js')}}"></script>
      <script>
          @if(session('error'))
-
              toastr.success('{{session('error')}}');
          @endif
      </script>

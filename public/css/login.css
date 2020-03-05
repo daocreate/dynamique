@@ -2,7 +2,7 @@
 
 .login_1 {
     padding: 80px 0px;
-    background-image: url(/images/background.jpg);
+    background-color: #A9A9A9;
     background-repeat: no-repeat;
     background-position: center;
     background-size:cover;
@@ -38,7 +38,7 @@
 }
 
 #bd_area {
-    background-image: url(/images/login2.png);
+
     background-repeat: no-repeat;
     background-size: 79.5%;
     height: 496px;

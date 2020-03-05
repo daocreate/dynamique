@@ -15,12 +15,12 @@
     <section class="content-header">
         <h1>
             Student
-            <small>@if($regiInfo) Update @else Add New @endif</small>
+            <small>@if($regiInfo) {{__('global.update')}} @else {{__('global.add')}} @endif</small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="{{URL::route('user.dashboard')}}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-            <li><a href="{{URL::route('student.index')}}"><i class="fa icon-student"></i> Student</a></li>
-            <li class="active">@if($regiInfo) Update @else Add @endif</li>
+            <li><a href="{{URL::route('user.dashboard')}}"><i class="fa fa-dashboard"></i> {{__('global.dashboard')}}</a></li>
+            <li><a href="{{URL::route('student.index')}}"><i class="fa icon-student"></i> {{__('global.student')}}</a></li>
+            <li class="active">@if($regiInfo) {{__('global.update')}} @else {{__('global.add')}} @endif</li>
         </ol>
     </section>
     <!-- ./Section header -->
@@ -32,17 +32,17 @@
                     <form novalidate id="entryForm" action="@if($regiInfo) {{URL::Route('student.update', $regiInfo->id)}} @else {{URL::Route('student.store')}} @endif" method="post" enctype="multipart/form-data">
                         <div class="box-header">
                             <div class="callout callout-danger">
-                                <p><b>Note:</b> Create a class and section before create new student. And subject if student have elective subject.</p>
+                                <p><b>Note:</b> {{__('create_class_before_student')}}</p>
                             </div>
                         </div>
                         <div class="box-body">
                             @csrf
                             @if($regiInfo)  {{ method_field('PATCH') }} @endif
-                            <p class="lead section-title">Student Info:</p>
+                            <p class="lead section-title">{{__('global.student')}} Info:</p>
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group has-feedback">
-                                        <label for="name">Name<span class="text-danger">*</span></label>
+                                        <label for="name">{{__('global.name')}}<span class="text-danger">*</span></label>
                                         <input autofocus type="text" class="form-control" name="name" placeholder="name" value="@if($student){{ $student->name }}@else{{old('name')}}@endif" required minlength="2" maxlength="255">
                                         <span class="fa fa-info form-control-feedback"></span>
                                         <span class="text-danger">{{ $errors->first('name') }}</span>
@@ -50,7 +50,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group has-feedback">
-                                        <label for="dob">Date of birth<span class="text-danger">*</span></label>
+                                        <label for="dob">{{__('global.date_of_birth')}}<span class="text-danger">*</span></label>
                                         <input type='text' class="form-control date_picker2"  readonly name="dob" placeholder="date" value="@if($student){{ $student->dob }}@else{{old('dob')}}@endif" required minlength="10" maxlength="255" />
                                         <span class="fa fa-calendar form-control-feedback"></span>
                                         <span class="text-danger">{{ $errors->first('dob') }}</span>
@@ -94,7 +94,7 @@
                                         <label for="nationality">Nationality<span class="text-danger">*</span>
                                             <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="select nationality"></i>
                                         </label>
-                                        {!! Form::select('nationality', ['Bangladeshi' => 'Bangladeshi', 'Other' => 'Other'], $nationality , ['class' => 'form-control', 'required' => 'true']) !!}
+                                        {!! Form::select('nationality', ['Cameroonian' => 'Cameroonian', 'Other' => 'Other'], $nationality , ['class' => 'form-control', 'required' => 'true']) !!}
                                         <span class="form-control-feedback"></span>
                                         <span class="text-danger">{{ $errors->first('nationality') }}</span>
                                     </div>
@@ -102,7 +102,7 @@
                                 <div class="col-md-3">
                                     <div class="form-group has-feedback">
                                         <label for="nationality">Nationality</label>
-                                        <input  type="text" class="form-control" name="nationality_other" @if(!$student || $student->nationality == "Bangladeshi") readonly @endif placeholder="Nationality" value="@if($student && $student->nationality != "Bangladeshi"){{$student->nationality}}@else{{old('nationality')}}@endif" maxlength="50" >
+                                        <input  type="text" class="form-control" name="nationality_other" @if(!$student || $student->nationality == "Cameroonian") readonly @endif placeholder="Nationality" value="@if($student && $student->nationality != "Cameroonian"){{$student->nationality}}@else{{old('nationality')}}@endif" maxlength="50" >
                                         <span class="fa fa-map-marker form-control-feedback"></span>
                                         <span class="text-danger">{{ $errors->first('nationality_other') }}</span>
                                     </div>

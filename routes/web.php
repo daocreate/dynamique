@@ -18,6 +18,11 @@ use Illuminate\Support\Facades\Session;
 //        return 'Welcome Admin';
 //    });
 //});
+Route::group(
+    ['namespace' => 'Backend', 'middleware' => ['guest']], function (){
+    Route::get('/logout', 'UserController@logout')->name('logout');
+}
+);
 
 /**
  * Admin panel routes goes below
@@ -39,7 +44,7 @@ Route::group(
 
 Route::group(
 	['namespace' => 'Backend', 'middleware' => ['auth', 'permission']], function () {
-		Route::get('/logout', 'UserController@logout')->name('logout');
+		//Route::get('/logout', 'UserController@logout')->name('logout');
 		Route::get('/lock', 'UserController@lock')->name('lockscreen');
 		Route::get('/dashboard', 'UserController@dashboard')->name('user.dashboard');
 
