@@ -15,12 +15,12 @@
     <section class="content-header">
         <h1>
             User
-            <small>@if($user) Update @else Add New @endif</small>
+            <small>@if($user) {{__('global.update')}} @else {{__('global.add')}} @endif</small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="{{URL::route('user.dashboard')}}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-            <li><a href="{{URL::route('user.index')}}"><i class="fa icon-user"></i> User</a></li>
-            <li class="active">@if($user) Update @else Add @endif</li>
+            <li><a href="{{URL::route('user.dashboard')}}"><i class="fa fa-dashboard"></i> {{__('global.dashboard')}}</a></li>
+            <li><a href="{{URL::route('user.index')}}"><i class="fa icon-user"></i> {{__('global.user')}}</a></li>
+            <li class="active">@if($user) {{__('global.update')}} @else {{__('global.add')}} @endif</li>
         </ol>
     </section>
     <!-- ./Section header -->
@@ -32,7 +32,7 @@
                     <form novalidate id="entryForm" action="@if($user) {{URL::Route('user.update', $user->id)}} @else {{URL::Route('user.store')}} @endif" method="post" enctype="multipart/form-data">
                         <div class="box-header">
                             <div class="callout callout-danger">
-                                <p><b>Note:</b> Create a role before create user if not exist.</p>
+                                <p><b>Note:</b> {{__('global.create_role_before_user_if_not_exist')}}</p>
                             </div>
                         </div>
                         <div class="box-body">
@@ -41,7 +41,7 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group has-feedback">
-                                        <label for="name">Name<span class="text-danger">*</span></label>
+                                        <label for="name">{{__('global.user_name')}}<span class="text-danger">*</span></label>
                                         <input autofocus type="text" class="form-control" name="name" placeholder="name" value="@if($user){{ $user->name }}@else{{old('name')}}@endif" required minlength="2" maxlength="255">
                                         <span class="fa fa-info form-control-feedback"></span>
                                         <span class="text-danger">{{ $errors->first('name') }}</span>
@@ -57,10 +57,10 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group has-feedback">
-                                        <label for="role_id">User Role
+                                        <label for="role_id">{{__('global.user_role')}}
                                             <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Set a user role"></i>
                                         </label>
-                                        {!! Form::select('role_id', $roles, $role , ['placeholder' => 'Pick a role...','class' => 'form-control select2', 'required' => 'true']) !!}
+                                        {!! Form::select('role_id', $roles, $role , ['placeholder' => $pick_a_role, 'class' => 'form-control select2', 'required' => 'true']) !!}
                                         <span class="form-control-feedback"></span>
                                         <span class="text-danger">{{ $errors->first('role_id') }}</span>
                                     </div>
@@ -70,7 +70,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group has-feedback">
-                                        <label for="username">Username<span class="text-danger">*</span></label>
+                                        <label for="username">{{__('global.user_name1')}}<span class="text-danger">*</span></label>
                                         <input  type="text" class="form-control" value="" name="username" required minlength="5" maxlength="255">
                                         <span class="glyphicon glyphicon-info-sign form-control-feedback"></span>
                                         <span class="text-danger">{{ $errors->first('username') }}</span>
@@ -78,7 +78,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group has-feedback">
-                                        <label for="password">Password<span class="text-danger">*</span></label>
+                                        <label for="password">{{__('global.login_password')}}<span class="text-danger">*</span></label>
                                         <input type="password" class="form-control" name="password" placeholder="Password" required minlength="6" maxlength="50">
                                         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                                         <span class="text-danger">{{ $errors->first('password') }}</span>
@@ -90,8 +90,8 @@
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer">
-                            <a href="{{URL::route('user.index')}}" class="btn btn-default">Cancel</a>
-                            <button type="submit" class="btn btn-info pull-right"><i class="fa @if($user) fa-refresh @else fa-plus-circle @endif"></i> @if($user) Update @else Add @endif</button>
+                            <a href="{{URL::route('user.index')}}" class="btn btn-default">{{__('global.cancel')}}</a>
+                            <button type="submit" class="btn btn-info pull-right"><i class="fa @if($user) fa-refresh @else fa-plus-circle @endif"></i> @if($user) {{__('global.update')}} @else {{__('global.add')}} @endif</button>
 
                         </div>
                     </form>

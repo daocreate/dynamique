@@ -24,7 +24,6 @@
                     @else
                         <h5><i class="icon fa fa-warning"></i>{{ Session::get('warning') }}</h5>
                         @endif
-                        </h5>
                 </div>
             </div>
         </div>
@@ -36,7 +35,7 @@
             </a>
         </div>
         <div class="login-box-body">
-            <p class="login-box-msg text-danger">Fill up the form correctly</p>
+            <p class="login-box-msg text-danger">{{__('global.fil_up_form_correctly')}}</p>
             <form novalidate id="resetForm" action="{{URL::Route('reset', $token)}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="token" value="{{$token}}">
@@ -58,11 +57,11 @@
 
                 <div class="row">
                     <div class="col-xs-6">
-                        <a href="{{URL::Route('login')}}" class="login-link">Let me login</a>
+                        <a href="{{URL::Route('login')}}" class="login-link">{{__('global.let_me_login')}}</a>
                     </div>
                 </div>
                 <br>
-                <button type="submit" class="btn btn-lg btn-block btn-flat login-button">RESET PASSWORD</button>
+                <button type="submit" class="btn btn-lg btn-block btn-flat login-button">{{__('global.reset_password')}}</button>
             </form>
 
 

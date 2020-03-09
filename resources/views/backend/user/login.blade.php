@@ -22,8 +22,24 @@
 <body>
     <section class="login_1">
         <div class="container-fluid">
+            @if (Session::has('success') || Session::has('error') || Session::has('warning'))
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-4">
+                        <div class="alert @if (Session::has('success')) alert-success @elseif(Session::has('error')) alert-danger @else alert-warning @endif alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            @if (Session::has('success'))
+                                <h5><i class="icon fa fa-check"></i>{{ Session::get('success') }}</h5>
+                            @elseif(Session::has('error'))
+                                <h5><i class="icon fa fa-ban"></i>{{ Session::get('error') }}</h5>
+                            @else
+                                <h5><i class="icon fa fa-warning"></i>{{ Session::get('warning') }}</h5>
+                                @endif
+                                </h5>
+                        </div>
+                    </div>
+                </div>
+            @endif
             <div class="row">
-
                 <div class="col-lg-10 col-md-12">
                     <div class="row" id="bd_area">
                         <div class="col-lg-4 col-md-12 text-center">
@@ -39,7 +55,7 @@
                         </div>
                         <div id="cres" class="col-lg-5 col-md-7">
                             <div class="bg-area11">
-                                <img class="card-img" src="{{ asset('images/loginmb.png') }}" alt="Card image">
+                                {{--<img class="card-img" src="{{ asset('images/loginmb.png') }}" alt="Card image">--}}
                                 <div class="card-img-overlay ">
                                     <h1 class="text-center mt-5 pt-3">{{__('global.welcome')}} !!!</h1>
                                     <form class="text-white" action="{{URL::Route('login')}}" method="post">

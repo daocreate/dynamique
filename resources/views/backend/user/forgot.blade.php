@@ -24,7 +24,6 @@
                  @else
                  <h5><i class="icon fa fa-warning"></i>{{ Session::get('warning') }}</h5>
                  @endif
-            </h5>              
               </div>
               </div>
               </div>
@@ -36,7 +35,7 @@
             </a>
         </div>        
         <div class="login-box-body">        
-            <p class="login-box-msg text-danger">Use your email to get reset password link</p>
+            <p class="login-box-msg text-danger">{{__('global.use_email_get_reset_password_link')}}</p>
             <form novalidate id="forgotForm" action="{{URL::Route('forgot')}}" method="post" enctype="multipart/form-data">
             @csrf
                 <div class="form-group has-feedback">
@@ -48,12 +47,12 @@
                 <div class="row">                  
                     <!-- /.col -->
                     <div class="col-xs-6">
-                    <a href="{{URL::Route('login')}}" class="login-link">Let me login</a>                        
+                    <a href="{{URL::Route('login')}}" class="login-link">{{__('global.let_me_login')}}</a>
                     </div>
                     <!-- /.col -->
                 </div>
                 <br>
-                <button type="submit" class="btn btn-lg btn-block btn-flat login-button">SEND RESET LINK</button>
+                <button type="submit" class="btn btn-lg btn-block btn-flat login-button">{{__('global.send_reset_link')}}</button>
             </form>        
            
 

@@ -33,9 +33,9 @@
             Notification
         </h1>
         <ol class="breadcrumb">
-            <li><a href="{{URL::route('user.dashboard')}}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-            <li><a href="{{URL::route('user.index')}}"><i class="fa fa-user"></i> User</a></li>
-            <li class="active">Notification</li>
+            <li><a href="{{URL::route('user.dashboard')}}"><i class="fa fa-dashboard"></i> {{__('global.dashboard')}}</a></li>
+            <li><a href="{{URL::route('user.index')}}"><i class="fa fa-user"></i> {{__('global.user')}}</a></li>
+            <li class="active">{{__('global.notifications')}}</li>
         </ol>
     </section>
     <!-- ./Section header -->
@@ -46,9 +46,9 @@
                 <div class="box box-info">
                     <div class="box-header">
                         <div class="box-tools pull-right">
-                            <a class="btn btn-warning @if($type == 'unread') disabled @endif" href="{{ URL::route('user.notification_unread') }}"><i class="fa fa-envelope"></i> Unread</a>
-                            <a class="btn btn-info @if($type == 'read') disabled @endif" href="{{ URL::route('user.notification_read') }}"><i class="fa fa-envelope-open"></i> Read</a>
-                            <a class="btn btn-primary @if($type == 'all') disabled @endif" href="{{ URL::route('user.notification_all') }}"><i class="fa fa-list-alt"></i> All</a>
+                            <a class="btn btn-warning @if($type == 'unread') disabled @endif" href="{{ URL::route('user.notification_unread') }}"><i class="fa fa-envelope"></i> {{__('global.unread')}}</a>
+                            <a class="btn btn-info @if($type == 'read') disabled @endif" href="{{ URL::route('user.notification_read') }}"><i class="fa fa-envelope-open"></i> {{__('global.read')}}</a>
+                            <a class="btn btn-primary @if($type == 'all') disabled @endif" href="{{ URL::route('user.notification_all') }}"><i class="fa fa-list-alt"></i> {{__('global.all')}}</a>
                         </div>
                     </div>
                     <!-- /.box-header -->
@@ -56,8 +56,8 @@
                         <div class="row">
                             <div class="col-md-offset-2 col-md-8">
                                 @if(count($messages))
-                                @if($type == 'unread') <a class="btn btn-info btn_mark_as_read" href="?action=mark_as_read"><i class="fa fa-envelope-open"></i> Mark as Read</a> @endif
-                                <a class="btn btn-danger" href="?action=delete"><i class="fa fa-trash"></i> Delete</a>
+                                @if($type == 'unread') <a class="btn btn-info btn_mark_as_read" href="?action=mark_as_read"><i class="fa fa-envelope-open"></i> {{__('global.mark_as_read')}}</a> @endif
+                                <a class="btn btn-danger" href="?action=delete"><i class="fa fa-trash"></i> {{__('global.delete')}}</a>
                                 @endif
                                 <ul class="list-group notification">
                                     @foreach($messages as $message)

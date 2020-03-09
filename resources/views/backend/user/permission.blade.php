@@ -17,8 +17,8 @@
             User Permission
         </h1>
         <ol class="breadcrumb">
-            <li><a href="{{URL::route('user.dashboard')}}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-            <li><a href="{{URL::route('user.index')}}"><i class="fa fa-user"></i> User</a></li>
+            <li><a href="{{URL::route('user.dashboard')}}"><i class="fa fa-dashboard"></i> {{__('global.dashboard')}}</a></li>
+            <li><a href="{{URL::route('user.index')}}"><i class="fa fa-user"></i> {{__('global.user')}}</a></li>
             <li class="active"> Permission</li>
         </ol>
     </section>
@@ -31,7 +31,7 @@
                     <form novalidate id="entryForm" action="{{URL::Route('user.permission', $user->id)}}" method="post" enctype="multipart/form-data">
                         <div class="box-header">
                             <div class="callout callout-danger">
-                                <p><b>Note:</b> User already got permissions from role. But if this user need extra permission then add it from below list.</p>
+                                <p><b>Note:</b> {{__('global.user_already_got_permission_from_role')}}</p>
                             </div>
                         </div>
                         <div class="box-body">
@@ -48,11 +48,11 @@
                                                 <th>
                                                     <input type="checkbox" class="checkbox tableCheckedAll">
                                                 </th>
-                                                <th width="30%">Module Name</th>
-                                                <th>Create</th>
-                                                <th>Edit</th>
-                                                <th>View</th>
-                                                <th>Delete</th>
+                                                <th width="30%">Module {{__('global.name')}}</th>
+                                                <th>{{__('global.create')}}</th>
+                                                <th>{{__('global.edit')}}</th>
+                                                <th>{{__('global.view')}}</th>
+                                                <th>{{__('global.delete')}}</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -99,8 +99,8 @@
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer">
-                            <a href="{{URL::route('user.index')}}" class="btn btn-default">Cancel</a>
-                            <button type="submit" class="btn btn-info pull-right"><i class="fa fa-refresh"></i> Update</button>
+                            <a href="{{URL::route('user.index')}}" class="btn btn-default">{{__('global.cancel')}}</a>
+                            <button type="submit" class="btn btn-info pull-right"><i class="fa fa-refresh"></i> {{__('global.update')}}</button>
 
                         </div>
                     </form>

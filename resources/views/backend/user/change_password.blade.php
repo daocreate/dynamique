@@ -14,11 +14,11 @@
     <!-- Main content -->
     <section class="content-header">
         <h1>
-            Change Password
+            {{__('global.change_password')}}
         </h1>
         <ol class="breadcrumb">
-            <li><a href="{{URL::route('user.dashboard')}}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-            <li class="active">Change Password</li>
+            <li><a href="{{URL::route('user.dashboard')}}"><i class="fa fa-dashboard"></i> {{__('global.dashboard')}}</a></li>
+            <li class="active">{{__('global.change_password')}}</li>
         </ol>
     </section>
 
@@ -29,7 +29,7 @@
                 <!-- Change password -->
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Update Password</h3>
+                        <h3 class="box-title">{{__('global.update')}} {{__('global.login_password')}}</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -52,8 +52,8 @@
                             </div>
 
                             <br>
-                            <a href="{{URL::route('user.dashboard')}}" class="btn btn-default btnCancel">Cancel</a>
-                            <button type="submit" class="btn btn-info pull-right"><i class="fa fa-refresh"></i> Update</button>
+                            <a href="{{URL::route('user.dashboard')}}" class="btn btn-default btnCancel">{{__('global.cancel')}}</a>
+                            <button type="submit" class="btn btn-info pull-right"><i class="fa fa-refresh"></i> {{__('global.update')}}</button>
                         </form>
                     </div>
                     <!-- /.box-body -->

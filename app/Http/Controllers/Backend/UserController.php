@@ -77,7 +77,7 @@ class UserController extends Controller
             $appSettings = AppHelper::getAppSettings();
 
             $msgType = "success";
-            $msg = "Welcome to admin panel.";
+            $msg = trans('controller.welcome_to_admin_panel');
 
             if(!count($appSettings)){
                 $msgType = "warning";
@@ -91,7 +91,7 @@ class UserController extends Controller
         Toastr::warning("controller.please_add_on_fee",'Warning');
 
         $combination_error = trans('controller.your_combination_was_incorrect');
-        return redirect()->route('login')->with('error', "controller.your_combination_was_incorrect");
+        return redirect()->route('login')->with('error', $combination_error);
     }
 
 
@@ -104,7 +104,7 @@ class UserController extends Controller
     {     
         Auth::logout();
         $logout = trans('controller.your_are_now_logged_out');
-        return redirect()->route('login')->with('success', "controller.your_are_now_logged_out");
+        return redirect()->route('login')->with('success', $logout);
     }
 
     /**
@@ -489,7 +489,8 @@ class UserController extends Controller
         $roles = Role::where('id', '<>', AppHelper::USER_ADMIN)->pluck('name', 'id');
         $user = null;
         $role = null;
-        return view('backend.user.add', compact('roles','user', 'role'));
+        $pick_a_role = trans('global.pick_a_role');
+        return view('backend.user.add', compact('roles','user', 'role', 'pick_a_role'));
     }
 
 
@@ -571,20 +572,20 @@ class UserController extends Controller
      * @param  \App\Item  $item
      * @return \Illuminate\Http\Response
      */
-//    public function show($id)
-//    {
-//        $user = User::rightJoin('user_roles', 'users.id', '=', 'user_roles.user_id')
-//            ->where('user_roles.role_id', '<>', AppHelper::USER_ADMIN)
-//            ->where('users.id', $id)
-//            ->first();
-//        if(!$user){
-//            abort(404);
-//        }
-//
-//        return view('backend.user.view', compact('teacher'));
-//
-//
-//    }
+    public function show($id)
+    {
+        $user = User::rightJoin('user_roles', 'users.id', '=', 'user_roles.user_id')
+            ->where('user_roles.role_id', '<>', AppHelper::USER_ADMIN)
+            ->where('users.id', $id)
+            ->first();
+        if(!$user){
+            abort(404);
+       }
+
+        return view('backend.user.view', compact('teacher'));
+
+
+   }
 
 
     /**
@@ -663,8 +664,6 @@ class UserController extends Controller
         }
 
         return redirect()->route('user.index')->with('success', 'User updated!');
-
-
     }
 
 
@@ -836,8 +835,6 @@ class UserController extends Controller
         return view('backend.user.permission', compact('permissionList', 'user'));
 
     }
-
-
 
 
     /**

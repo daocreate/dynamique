@@ -18,7 +18,7 @@
             <small>{{__('global.list')}}</small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="{{URL::route('user.dashboard')}}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+            <li><a href="{{URL::route('user.dashboard')}}"><i class="fa fa-dashboard"></i> {{__('global.dashboard')}}</a></li>
             <li class="active">User</li>
         </ol>
     </section>
@@ -30,7 +30,7 @@
                 <div class="box box-info">
                     <div class="box-header">
                         <div class="box-tools pull-right">
-                            <a class="btn btn-info btn-sm" href="{{ URL::route('user.create') }}"><i class="fa fa-plus-circle"></i> Add New</a>
+                            <a class="btn btn-info btn-sm" href="{{ URL::route('user.create') }}"><i class="fa fa-plus-circle"></i>{{__('global.add_new')}}</a>
                         </div>
                     </div>
                     <!-- /.box-header -->
@@ -40,7 +40,7 @@
                             <thead>
                             <tr>
                                 <th width="5%">#</th>
-                                <th width="20%">Name</th>
+                                <th width="20%">{{__('global.name')}}</th>
                                 <th width="10%">Username</th>
                                 <th width="30%">Email</th>
                                 <th width="10%">Role</th>
@@ -63,13 +63,12 @@
                                         <input class="statusChange" type="checkbox" data-pk="{{$user->id}}" @if($user->status) checked @endif data-toggle="toggle" data-on="<i class='fa fa-check-circle'></i>" data-off="<i class='fa fa-ban'></i>" data-onstyle="success" data-offstyle="danger">
                                     </td>
                                     <td>
-                                        {{--<div class="btn-group">--}}
-                                            {{--<a title="Details"  href="{{URL::route('user.show',$user->id)}}"  class="btn btn-primary btn-sm"><i class="fa fa-eye"></i>--}}
-                                            {{--</a>--}}
-                                        {{--</div>--}}
+                                        {{--<div class="btn-group">
+                                            <a title="Details"  href="{{URL::route('user.show',$user->id)}}"  class="btn btn-primary btn-sm"><i class="fa fa-eye"></i>
+                                            </a>
+                                        </div>--}}
                                         <div class="btn-group">
                                             <a title="{{__('global.edit')}}" href="{{URL::route('user.edit',$user->id)}}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
-                                            </a>
                                         </div>
                                         <!-- todo: have problem in mobile device -->
                                         <div class="btn-group">
@@ -94,7 +93,7 @@
                             <tfoot>
                             <tr>
                                 <th width="5%">#</th>
-                                <th width="20%">Name</th>
+                                <th width="20%">{{__('global.name')}}</th>
                                 <th width="10%">Username</th>
                                 <th width="30%">Email</th>
                                 <th width="10%">Role</th>

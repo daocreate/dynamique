@@ -42,7 +42,7 @@
                             <div class="inner ">
                                 <h3 class="text-white">{{$students}} </h3>
                                 <p class="text-white">
-                                    Student </p>
+                                    {{__('global.student')}} </p>
                             </div>
                         </a>
                     </div>
@@ -58,7 +58,7 @@
                                 <h3 class="text-white">
                                     {{$teachers}} </h3>
                                 <p class="text-white">
-                                    Teacher </p>
+                                    {{__('global.teacher')}} </p>
                             </div>
                         </a>
                     </div>
@@ -73,7 +73,7 @@
                                 <h3 class="text-white">
                                     {{$employee}} </h3>
                                 <p class="text-white">
-                                    Employee </p>
+                                    {{__('global.employee')}} </p>
                             </div>
                         </a>
                     </div>
@@ -89,7 +89,7 @@
                                 <h3 class="text-white">
                                     {{$subjects}} </h3>
                                 <p class="text-white">
-                                    Subject </p>
+                                    {{__('global.subject')}} </p>
                             </div>
                         </a>
                     </div>
@@ -111,7 +111,7 @@
             <div class="col-md-12">
                 <div class="box box-info">
                     <div class="box-header with-border x_title">
-                        <h3>Students Today's Attendance</h3>
+                        <h3>{{__('global.student_today_attendance')}} </h3>
                         <div class="box-tools pull-right">
                             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                             </button>
@@ -133,7 +133,7 @@
                 <div class="col-md-12">
                     <div class="box box-warning">
                         <div class="box-header with-border x_title">
-                            <h3>Sending SMS Report</h3>
+                            <h3>{{__('global.sending_sms_report,')}}</h3>
                             <div class="box-tools pull-right">
                                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                                 </button>
@@ -156,7 +156,7 @@
                     <div class="col-md-6">
                         <div class="box box-success">
                             <div class="box-header with-border x_title">
-                                <h3>Class Wise Students</h3>
+                                <h3>{{__('global.class_wise_student')}}</h3>
                                 <div class="box-tools pull-right">
                                     <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                                     </button>
@@ -183,7 +183,7 @@
                     <div class="col-md-6">
                         <div class="box box-danger">
                             <div class="box-header with-border x_title">
-                                <h3>Section Wise Students</h3>
+                                <h3>{{__('global.section_wise_student')}}</h3>
                                 <div class="box-tools pull-right">
                                     <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                                     </button>
@@ -232,7 +232,6 @@
         @endif
         $(document).ready(function () {
             Dashboard.init();
-
         });
 
     </script>

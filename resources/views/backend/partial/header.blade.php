@@ -110,7 +110,7 @@
             <div class="col-xs-6 text-center password">
                 <a href="{{ URL::route('lockscreen') }}">
                     <div><i class="fa fa-eye-slash"></i></div>
-                    Lock Screen
+                    {{__('global.lock_screen')}}
                 </a>
             </div>
         </li>

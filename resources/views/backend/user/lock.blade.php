@@ -46,10 +46,10 @@
         </div>
         <!-- /.lockscreen-item -->
         <div class="help-block text-center">
-            Enter your password to retrieve your session
+            <strong>{{__('global.enter_password_retrieve_session')}}</strong>
         </div>
         <div class="text-center">
-            <a href="{{URL::route('login')}}">Or sign in as a different user</a>
+            <a href="{{URL::route('login')}}">{{__('global.or_sign_in_a_different_user')}}</a>
         </div>
         <div class="lockscreen-footer text-center">
             @if (Session::has('success') || Session::has('error') || Session::has('warning'))

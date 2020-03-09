@@ -14,11 +14,11 @@
     <!-- Main content -->
     <section class="content-header">
         <h1>
-            User Profile
+             {{__('global.user_profile')}}
         </h1>
         <ol class="breadcrumb">
-            <li><a href="{{URL::route('user.dashboard')}}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-            <li class="active">User profile</li>
+            <li><a href="{{URL::route('user.dashboard')}}"><i class="fa fa-dashboard"></i> {{__('global.dashboard')}}</a></li>
+            <li class="active">{{__('global.user_profile')}}</li>
         </ol>
     </section>
 
@@ -35,11 +35,11 @@
                         <h3 class="profile-username text-center">{{$user->name}}</h3>
                         <p class="text-muted text-center">{{$userRole->name}}</p>
 
-                        <strong><i class="fa fa-user margin-r-5"></i>Username</strong>
+                        <strong><i class="fa fa-user margin-r-5"></i>{{__('global.user_name1')}}</strong>
                         <p class="text-muted">{{$user->username}}</p>
 
                         <hr>
-                        <strong><i class="fa fa-info-circle margin-r-5"></i>Full name</strong>
+                        <strong><i class="fa fa-info-circle margin-r-5"></i>{{__('global.name')}}</strong>
                         <p class="text-muted">
                             {{$user->name}}
                         </p>
@@ -51,16 +51,16 @@
 
                         <hr>
 
-                        <strong><i class="fa fa-clock-o margin-r-5"></i>Created At</strong>
+                        <strong><i class="fa fa-clock-o margin-r-5"></i>{{__('global.created_at')}}</strong>
                         <p class="text-muted">{{date('F j,Y', strtotime($user->created_at))}}</p>
-                        <a href="#" class="btn btn-primary btn-block btnUpdate"><b>Update</b></a>
+                        <a href="#" class="btn btn-primary btn-block btnUpdate"><b>{{__('global.update')}}</b></a>
                     </div>
                     <!-- /.box-body -->
                 </div>
                 <!-- About Me Box -->
                 <div class="box box-primary" @if(!$isPost)style="display: none;" @endif id="profileUpdate">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Update Information</h3>
+                        <h3 class="box-title">{{__('global.update')}} Information</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -84,8 +84,8 @@
 
 
                             <br>
-                            <a href="#" class="btn btn-default btnCancel">Cancel</a>
-                            <button type="submit" class="btn btn-info pull-right"><i class="fa fa-refresh"></i> Update</button>
+                            <a href="#" class="btn btn-default btnCancel">{{__('global.cancel')}}</a>
+                            <button type="submit" class="btn btn-info pull-right"><i class="fa fa-refresh"></i> {{__('global.update')}}</button>
                         </form>
                     </div>
                     <!-- /.box-body -->
