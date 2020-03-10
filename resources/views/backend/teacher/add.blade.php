@@ -15,12 +15,12 @@
     <section class="content-header">
         <h1>
             Teacher
-            <small>@if($teacher) Update @else Add New @endif</small>
+            <small>@if($teacher) {{__('global.update')}} @else {{__('global.add_new')}} @endif</small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="{{URL::route('user.dashboard')}}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-            <li><a href="{{URL::route('teacher.index')}}"><i class="fa icon-teacher"></i> Teacher</a></li>
-            <li class="active">@if($teacher) Update @else Add @endif</li>
+            <li><a href="{{URL::route('user.dashboard')}}"><i class="fa fa-dashboard"></i> {{__('global.dashboard')}}</a></li>
+            <li><a href="{{URL::route('teacher.index')}}"><i class="fa icon-teacher"></i> {{__('global.teacher')}}</a></li>
+            <li class="active">@if($teacher) {{__('global.update')}} @else {{__('global.add_new')}} @endif</li>
         </ol>
     </section>
     <!-- ./Section header -->
@@ -36,8 +36,8 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group has-feedback">
-                                        <label for="name">Name<span class="text-danger">*</span></label>
-                                        <input autofocus type="text" class="form-control" name="name" placeholder="name" value="@if($teacher){{ $teacher->name }}@else{{old('name')}}@endif" required minlength="2" maxlength="255">
+                                        <label for="name">{{__('global.name')}}<span class="text-danger">*</span></label>
+                                        <input autofocus type="text" class="form-control" name="name" placeholder="{{__('global.name')}}" value="@if($teacher){{ $teacher->name }}@else{{old('name')}}@endif" required minlength="2" maxlength="255">
                                         <span class="fa fa-info form-control-feedback"></span>
                                         <span class="text-danger">{{ $errors->first('name') }}</span>
                                     </div>
@@ -72,7 +72,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group has-feedback">
                                         <label for="gender">Gender<span class="text-danger">*</span>
-                                            <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="select gender type"></i>
+                                            <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="{{__('global.select_gender_type')}}"></i>
                                         </label>
                                         {!! Form::select('gender', AppHelper::GENDER, $gender , ['class' => 'form-control select2', 'required' => 'true']) !!}
                                         <span class="form-control-feedback"></span>
@@ -82,7 +82,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group has-feedback">
                                         <label for="religion">Religion<span class="text-danger">*</span>
-                                            <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="select religion type"></i>
+                                            <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="{{__('global.select religion type')}}"></i>
                                         </label>
                                         {!! Form::select('religion', AppHelper::RELIGION, $religion , ['class' => 'form-control select2', 'required' => 'true']) !!}
                                         <span class="form-control-feedback"></span>
@@ -176,7 +176,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group has-feedback">
-                                        <label for="password">Passwrod<span class="text-danger">*</span></label>
+                                        <label for="password">{{__('global.login_password')}}<span class="text-danger">*</span></label>
                                         <input type="password" class="form-control" name="password" placeholder="Password" required minlength="6" maxlength="50">
                                         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                                         <span class="text-danger">{{ $errors->first('password') }}</span>
@@ -202,8 +202,8 @@
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer">
-                            <a href="{{URL::route('teacher.index')}}" class="btn btn-default">Cancel</a>
-                            <button type="submit" class="btn btn-info pull-right"><i class="fa @if($teacher) fa-refresh @else fa-plus-circle @endif"></i> @if($teacher) Update @else Add @endif</button>
+                            <a href="{{URL::route('teacher.index')}}" class="btn btn-default">{{__('global.cancel')}}</a>
+                            <button type="submit" class="btn btn-info pull-right"><i class="fa @if($teacher) fa-refresh @else fa-plus-circle @endif"></i> @if($teacher) {{__('global.update')}} @else {{__('global.add')}} @endif</button>
 
                         </div>
                     </form>

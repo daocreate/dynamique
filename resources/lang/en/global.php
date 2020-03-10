@@ -335,5 +335,9 @@ return [
     'user_already_got_permission_from_role' => 'User already got permissions from role. But if this user need extra permission then add it from below list.',
     'user_profile'                          => 'User Profile',
     'fil_up_form_correctly'                 => 'Fill up the form correctly',
-
+    'id_card'                               => 'ID Card',
+    'select_gender_type'                    => 'select gender type',
+    'select religion type'                  => 'select religion type',
+    'holiday'                               => 'Holiday',
+    'end_date'                              => 'End Date',
 ];

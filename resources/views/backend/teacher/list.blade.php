@@ -14,12 +14,12 @@
     <!-- Section header -->
     <section class="content-header">
         <h1>
-            Teacher
+            {{__('global.teacher')}}
             <small>List</small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="{{URL::route('user.dashboard')}}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-            <li class="active">Teacher</li>
+            <li><a href="{{URL::route('user.dashboard')}}"><i class="fa fa-dashboard"></i> {{__('global.dashboard')}}</a></li>
+            <li class="active">{{__('global.teacher')}}</li>
         </ol>
     </section>
     <!-- ./Section header -->
@@ -30,7 +30,7 @@
                 <div class="box box-info">
                     <div class="box-header">
                         <div class="box-tools pull-right">
-                            <a class="btn btn-info btn-sm" href="{{ URL::route('teacher.create') }}"><i class="fa fa-plus-circle"></i> Add New</a>
+                            <a class="btn btn-info btn-sm" href="{{ URL::route('teacher.create') }}"><i class="fa fa-plus-circle"></i> {{__('global.add_new')}}</a>
                         </div>
                     </div>
                     <!-- /.box-header -->
@@ -72,15 +72,14 @@
                                             </a>
                                         </div>
                                         <div class="btn-group">
-                                            <a title="Edit" href="{{URL::route('teacher.edit',$teacher->id)}}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
-                                            </a>
+                                            <a title="{{__('global.edit')}}" href="{{URL::route('teacher.edit',$teacher->id)}}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
                                         </div>
                                         <!-- todo: have problem in mobile device -->
                                         <div class="btn-group">
                                             <form  class="myAction" method="POST" action="{{URL::route('teacher.destroy', $teacher->id)}}">
                                                 @csrf
-                                                <input name="_method" type="hidden" value="DELETE">
-                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete">
+                                                <input name="_method" type="hidden" value="{{__('global.delete')}}">
+                                                <button type="submit" class="btn btn-danger btn-sm" title="{{__('global.delete')}}">
                                                     <i class="fa fa-fw fa-trash"></i>
                                                 </button>
                                             </form>

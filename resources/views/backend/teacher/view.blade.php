@@ -26,19 +26,19 @@
     <!-- Section header -->
     <section class="content-header">
         <div class="btn-group">
-            <a href="#"  class="btn-ta btn-sm-ta btn-print btnPrintInformation"><i class="fa fa-print"></i> Print</a>
+            <a href="#"  class="btn-ta btn-sm-ta btn-print btnPrintInformation"><i class="fa fa-print"></i> {{__('global.datatables.print')}}</a>
         </div>
         <div class="btn-group">
-            <a  href="{{URL::route('teacher.show',$teacher->id)}}?print_idcard=1" class="btn-ta btn-sm-ta" target="_blank"><span class="fa fa-floppy-o"></span> ID Card </a>
+            <a  href="{{URL::route('teacher.show',$teacher->id)}}?print_idcard=1" class="btn-ta btn-sm-ta" target="_blank"><span class="fa fa-floppy-o"></span>{{__('global.id_card')}}  </a>
         </div>
         <div class="btn-group">
-            <a href="{{URL::route('teacher.edit',$teacher->id)}}" class="btn-ta btn-sm-ta"><i class="fa fa-edit"></i> Edit</a>
+            <a href="{{URL::route('teacher.edit',$teacher->id)}}" class="btn-ta btn-sm-ta"><i class="fa fa-edit"></i> {{__('global.edit')}}</a>
         </div>
 
         <ol class="breadcrumb">
-            <li><a href="{{URL::route('user.dashboard')}}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-            <li><a href="{{URL::route('teacher.index')}}"><i class="fa icon-teacher"></i> Teacher</a></li>
-            <li class="active">View</li>
+            <li><a href="{{URL::route('user.dashboard')}}"><i class="fa fa-dashboard"></i> {{__('global.dashboard')}}</a></li>
+            <li><a href="{{URL::route('teacher.index')}}"><i class="fa icon-teacher"></i> {{__('global.teacher')}}</a></li>
+            <li class="active">{{__('global.view')}}</li>
         </ol>
     </section>
     <!-- ./Section header -->
@@ -56,10 +56,10 @@
                                     <p class="text-muted text-center">{{$teacher->designation}}</p>
                                     <ul class="list-group list-group-unbordered">
                                         <li class="list-group-item" style="background-color: #FFF">
-                                            <b>ID Card No.</b> <a class="pull-right">{{$teacher->id_card}}</a>
+                                            <b>{{__('global.id_card')}} No.</b> <a class="pull-right">{{$teacher->id_card}}</a>
                                         </li>
                                         <li class="list-group-item" style="background-color: #FFF">
-                                            <b>Phone</b> <a class="pull-right">{{$teacher->phone_no}}</a>
+                                            <b>{{__('global.phone')}}</b> <a class="pull-right">{{$teacher->phone_no}}</a>
                                         </li>
                                         <li class="list-group-item" style="background-color: #FFF">
                                             <b>Email</b> <a class="pull-right">{{$teacher->email}}</a>
@@ -69,7 +69,7 @@
                             </div>
                             <div class="box box-info">
                                 <div class="box-header with-border">
-                                    <h3 class="box-title">Profile</h3>
+                                    <h3 class="box-title">{{__('global.profile')}}</h3>
                                 </div>
                                 <!-- /.box-header -->
                                 <div class="box-body">

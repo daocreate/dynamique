@@ -335,4 +335,10 @@ return [
     'user_already_got_permission_from_role' => 'L\'utilisateur a déjà obtenu les autorisations du rôle. Mais si cet utilisateur a besoin d\'une autorisation supplémentaire, ajoutez-le à partir de la liste ci-dessous.',
     'user_profile'                          => 'Profile Utilisateur',
     'fil_up_form_correctly'                 => 'Remplissez correctement le formulaire',
+    'id_card'                               => 'Carte d\'identité',
+    'select_gender_type'                    => 'sélectionner le type de sexe',
+    'select religion type'                  => 'sélectionner le type de religion',
+    'holiday'                               => 'Vacances',
+    'end_date'                              => 'Date de Fin',
+
 ];

@@ -87,8 +87,8 @@ class UserController extends Controller
             return redirect()->intended('dashboard')->with($msgType, $msg);
 
         }
-        $on_fee = trans('controller.please_add_on_fee');
-        Toastr::warning("controller.please_add_on_fee",'Warning');
+        $on_fee = trans('controller.please_add_on_fee:');
+        Toastr::warning($on_fee,'Warning');
 
         $combination_error = trans('controller.your_combination_was_incorrect');
         return redirect()->route('login')->with('error', $combination_error);
@@ -161,7 +161,6 @@ class UserController extends Controller
 
         return view('backend.user.forgot');
     }
-
 
     /**
      * Get the broker to be used during password reset.
@@ -395,7 +394,8 @@ class UserController extends Controller
             if($oldUsername != $newUserName){
                 $existUsers = User::where('username',$newUserName)->count();
                 if($existUsers){
-                    session()->flash('error', 'Username already exists for another account!');
+                    $already_exist = trans('controller.username_exist_for_another_account');
+                    session()->flash('error', $already_exist);
                     $isExists = true;
                 }
 
@@ -404,7 +404,8 @@ class UserController extends Controller
             if($oldEmail != $newEmail){
                 $existUsers = User::where('email',$newEmail)->count();
                 if($existUsers){
-                    session()->flash('error', 'Email already exists for another account!');
+                    $email_exist = trans('controller.email_exist_for_another_account');
+                    session()->flash('error', $email_exist);
                     $isExists = true;
                 }
 
@@ -415,8 +416,8 @@ class UserController extends Controller
                 $user->email = $newEmail;
                 $user->username = $newUserName;
                 $user->save();
-
-                return redirect()->route('profile')->with('success', 'Profile updated.');
+                $profile_updated = trans('controller.profile_update');
+                return redirect()->route('profile')->with('success', $profile_updated);
 
             }
 
@@ -452,7 +453,8 @@ class UserController extends Controller
             $user->password = bcrypt($request->get('password'));
             $user->save();
             Auth::logout();
-            return redirect()->route('login')->with('success', 'Password successfully change. Login now :)');
+            $password_change = trans('controller.password_successfully_change');
+            return redirect()->route('login')->with('success', $password_change);
 
 
         }
@@ -645,7 +647,8 @@ class UserController extends Controller
         );
 
         if($request->get('role_id') == AppHelper::USER_ADMIN){
-            return redirect()->route('user.index')->with("error",'Do not mess with the system!!!');
+            $do_not_mess_system = trans('controller.do_not_mess_with_system');
+            return redirect()->route('user.index')->with("error", $do_not_mess_system);
 
         }
 
@@ -663,7 +666,7 @@ class UserController extends Controller
             ]);
         }
 
-        return redirect()->route('user.index')->with('success', 'User updated!');
+        return redirect()->route('user.index')->with('success', trans('user_update'));
     }
 
 
@@ -681,7 +684,7 @@ class UserController extends Controller
          $userRole = UserRole::where('user_id', $user->id)->first();
 
          if($userRole && $userRole->role_id == AppHelper::USER_ADMIN){
-             return redirect()->route('user.index')->with('error', 'Don not mess with the system');
+             return redirect()->route('user.index')->with('error', trans('controller.do_not_mess_with_system'));
 
          }
 
@@ -712,7 +715,7 @@ class UserController extends Controller
             Cache::forget('permission'.auth()->user()->id);
             Cache::forget('roles'.auth()->user()->id);
 
-            return redirect()->route('user.index')->with('success', 'User deleted.');
+            return redirect()->route('user.index')->with('success', trans('controller.user_deleted'));
 
 
         }
@@ -748,7 +751,7 @@ class UserController extends Controller
         if($userRole && $userRole->role_id == AppHelper::USER_ADMIN){
             return [
                 'success' => false,
-                'message' => 'Don not mess with the system!'
+                'message' => trans('controller.do_not_mess_with_system')
             ];
 
         }
@@ -763,7 +766,7 @@ class UserController extends Controller
 
         return [
             'success' => true,
-            'message' => 'Status updated.'
+            'message' => trans('controller.status_update')
         ];
 
     }
@@ -779,7 +782,7 @@ class UserController extends Controller
         $userRole = UserRole::where('user_id', $user->id)->first();
 
         if($userRole && $userRole->role_id == AppHelper::USER_ADMIN){
-            return redirect()->route('user.index')->with('error', 'Don not mess with the system.');
+            return redirect()->route('user.index')->with('error', trans('controller.do_not_mess_with_system'));
 
         }
 
@@ -812,7 +815,7 @@ class UserController extends Controller
                 //flush the permission cache also other cache
                 Cache::flush();
 
-            return redirect()->route('user.index')->with('success', 'User Permission Updated.');
+            return redirect()->route('user.index')->with('success', trans('controller.user_permission_update') );
 
             }
             catch(\Exception $e){
@@ -856,13 +859,13 @@ class UserController extends Controller
             $role = Role::findOrFail($id);
 
             if(!$role->deletable){
-                return redirect()->route('user.role_index')->with('error', 'You can\'t delete this role?');
+                return redirect()->route('user.role_index')->with('error', trans('controller.you_cant_delete_this_role'));
             }
 
             //check if this role has active user
             $users = UserRole::where('role_id', $role->id)->count();
             if($users){
-                return redirect()->route('user.role_index')->with('error', 'Role has users, So can\'t delete it!');
+                return redirect()->route('user.role_index')->with('error', trans('controller.role_has_user_cant_delete'));
             }
 
 
@@ -887,7 +890,7 @@ class UserController extends Controller
                 //flush the permission cache also other cache
                 Cache::flush();
 
-                return redirect()->route('user.role_index')->with('success', 'Role deleted!');
+                return redirect()->route('user.role_index')->with('success', trans('controller.role_deleted'));
 
             }
             catch(\Exception $e){
@@ -942,7 +945,7 @@ class UserController extends Controller
             //flush the permission cache also other cache
             Cache::flush();
 
-            return redirect()->route('user.role_index')->with('success', 'Role Created.');
+            return redirect()->route('user.role_index')->with('success', trans('controller.role_create'));
         }
 
 
@@ -962,7 +965,7 @@ class UserController extends Controller
     {
         //check if it is admin role then, reject from modify
         if($id == AppHelper::USER_ADMIN){
-            return redirect()->route('user.role_index')->with('error', 'Don not mess with the system');
+            return redirect()->route('user.role_index')->with('error', trans('controller.do_not_mess_with_system'));
         }
 
         //collect role info and permissions
@@ -997,7 +1000,7 @@ class UserController extends Controller
                 //flush the permission cache also other cache
                 Cache::flush();
 
-                return redirect()->route('user.role_index')->with('success', 'Role Permission Updated.');
+                return redirect()->route('user.role_index')->with('success', trans('controller.role_permission_update'));
 
             }
             catch(\Exception $e){

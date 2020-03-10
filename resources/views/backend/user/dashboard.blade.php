@@ -31,6 +31,23 @@
 @section('pageContent')
     <!-- Main content -->
     <section class="content">
+        @if (Session::has('success') || Session::has('error') || Session::has('warning'))
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="alert @if (Session::has('success')) alert-success @elseif(Session::has('error')) alert-danger @else alert-warning @endif alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        @if (Session::has('success'))
+                            <h5><i class="icon fa fa-check"></i>{{ Session::get('success') }}</h5>
+                        @elseif(Session::has('error'))
+                            <h5><i class="icon fa fa-ban"></i>{{ Session::get('error') }}</h5>
+                        @else
+                            <h5><i class="icon fa fa-warning"></i>{{ Session::get('warning') }}</h5>
+                            @endif
+                            </h5>
+                    </div>
+                </div>
+            </div>
+        @endif
         @if($userRoleId == AppHelper::USER_ADMIN)
             <div class="row">
                 <div class="col-lg-3 col-xs-6">
@@ -133,7 +150,7 @@
                 <div class="col-md-12">
                     <div class="box box-warning">
                         <div class="box-header with-border x_title">
-                            <h3>{{__('global.sending_sms_report,')}}</h3>
+                            <h3>{{__('global.sending_sms_report')}}</h3>
                             <div class="box-tools pull-right">
                                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                                 </button>

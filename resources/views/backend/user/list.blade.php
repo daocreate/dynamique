@@ -73,12 +73,11 @@
                                         <!-- todo: have problem in mobile device -->
                                         <div class="btn-group">
                                             <a title="{{__('global.edit_permission')}}" href="{{URL::route('user.permission',$user->id)}}" class="btn btn-info btn-sm"><i class="fa fa-user-times"></i></a>
-                                            </a>
                                         </div>
                                         <div class="btn-group">
                                             <form  class="myAction" method="POST" action="{{URL::route('user.destroy', $user->id)}}">
                                                 @csrf
-                                                <input name="_method" type="hidden" value="DELETE">
+                                                <input name="_method" type="hidden" value="{{__('global.delete')}}">
                                                 <button type="submit" class="btn btn-danger btn-sm" title="{{__('global.delete')}}">
                                                     <i class="fa fa-fw fa-trash"></i>
                                                 </button>
