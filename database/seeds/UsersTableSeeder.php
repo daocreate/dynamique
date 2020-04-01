@@ -24,6 +24,7 @@ class UsersTableSeeder extends Seeder
                 'password' => bcrypt('123456'),
                 'remember_token' => null,
             ]
+
         );
 
        UserRole::create(

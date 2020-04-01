@@ -255,7 +255,7 @@ class DemoSiteDataSeeder extends Seeder
         $data = [
             'writer' => 'daocreate',
             'comments' => 'Awesome Academy',
-            'avatar'    => null,
+            'photo'    => null,
             'order'     => 1,
         ];
 
@@ -264,7 +264,7 @@ class DemoSiteDataSeeder extends Seeder
         $data = [
             'writer' => 'Tanekou Bernard',
             'comments' => 'Great school',
-            'avatar'    => null,
+            'photo'    => null,
             'order'     => 2,
         ];
 
@@ -297,7 +297,7 @@ class DemoSiteDataSeeder extends Seeder
             'key_point_2_content' => 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock',
             'about_us' => 'it is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
             'who_we_are' => 'it is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution',
-            'intro_video_embed_code' => '<iframe src="https://www.youtube.com/embed/6sa1G_9jCb0" frameborder="0"  allowfullscreen></iframe>',
+            'intro_video_embed_code' => '<iframe src="https://www.youtube.com/watch?v=cT-RPvF7pBU&t=11s" frameborder="0"  allowfullscreen></iframe>',
             'video_site_link' => 'https://www.youtube.com',
 
         ];

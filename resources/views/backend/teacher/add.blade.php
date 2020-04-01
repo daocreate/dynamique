@@ -82,7 +82,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group has-feedback">
                                         <label for="religion">Religion<span class="text-danger">*</span>
-                                            <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="{{__('global.select religion type')}}"></i>
+                                            <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="{{__('global.select_blood_type')}}"></i>
                                         </label>
                                         {!! Form::select('religion', AppHelper::RELIGION, $religion , ['class' => 'form-control select2', 'required' => 'true']) !!}
                                         <span class="form-control-feedback"></span>

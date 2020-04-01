@@ -1,7 +1,7 @@
 {
     "name": "DAO School Management",
     "version": "1.0",
-    "description": "Another School Management System build with laravel",
+    "description": "School Management System build with laravel",
     "keywords": [
         "School",
         "Management",

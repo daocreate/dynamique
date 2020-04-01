@@ -129,7 +129,7 @@ class StudentController extends Controller
             $academic_years = AcademicYear::where('status', '1')->orderBy('id', 'desc')->pluck('title', 'id');
         }
 
-
+        $pick_a_date = trans('controller.pick_a_date');
 
         return view('backend.student.add', compact(
             'regiInfo',
@@ -149,7 +149,8 @@ class StudentController extends Controller
             'electiveSubjects',
             'coreSubjects',
             'esubject',
-            'csubject'
+            'csubject',
+            'pick_a_date'
         ));
     }
 

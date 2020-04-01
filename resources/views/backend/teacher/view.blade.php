@@ -73,15 +73,15 @@
                                 </div>
                                 <!-- /.box-header -->
                                 <div class="box-body">
-                                    <strong><i class="fa fa-info margin-r-5"></i> Gender</strong>
+                                    <strong><i class="fa fa-info margin-r-5"></i> {{__('global.gender')}}</strong>
                                     <p class="text-muted">{{$teacher->gender}}</p>
 
                                     <hr>
-                                    <strong><i class="fa fa-clock-o margin-r-5"></i> Date of Birth</strong>
+                                    <strong><i class="fa fa-clock-o margin-r-5"></i> {{__('global.date_of_birth')}}</strong>
                                     <p class="text-muted">{{$teacher->dob}}</p>
 
                                     <hr>
-                                    <strong><i class="fa fa-book margin-r-5"></i> Qualification</strong>
+                                    <strong><i class="fa fa-book margin-r-5"></i> Qualification </strong>
                                     <p class="text-muted">{{$teacher->qualification}}</p>
 
                                     <hr>

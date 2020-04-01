@@ -214,7 +214,7 @@ class DemoAppDataSeeder extends Seeder
 
         $data['name'] = 'GSBDSchool BD';
         $data['short_name'] = 'GSBD';
-        $data['establish'] = '2019';
+        $data['establish'] = '2020';
         $data['website_link'] = 'http://dynamique-bs.com';
         $data['email'] = 'info@dynamique-bs.com';
         $data['phone_no'] = '+237 677 002 528 / 658 787 902 /660 296 606';
